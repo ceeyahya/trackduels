@@ -5,21 +5,7 @@ import { Menu, Transition } from '@headlessui/react';
 
 import { classNames } from 'utils/classNames';
 
-const people = [
-	{ id: 1, name: 'Wade Cooper' },
-	{ id: 2, name: 'Arlene Mccoy' },
-	{ id: 3, name: 'Devon Webb' },
-	{ id: 4, name: 'Tom Cook' },
-	{ id: 5, name: 'Tanya Fox' },
-	{ id: 6, name: 'Hellen Schmidt' },
-	{ id: 7, name: 'Caroline Schultz' },
-	{ id: 8, name: 'Mason Heaney' },
-	{ id: 9, name: 'Claudie Smitham' },
-	{ id: 10, name: 'Emil Schaefer' },
-];
-
 export function NavMenu() {
-	const [selected, setSelected] = useState(people[3]);
 	const { systemTheme, theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
 
@@ -34,7 +20,7 @@ export function NavMenu() {
 			{mounted ? (
 				<Menu as='div' className='relative inline-block text-left'>
 					<div>
-						<Menu.Button className='flex items-center rounded-md bg-gray-100 px-2 py-2 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 focus:ring-offset-gray-100 dark:bg-zinc-700 dark:text-zinc-200 dark:ring-offset-zinc-700'>
+						<Menu.Button className='flex items-center rounded-md bg-gray-100 px-2 py-2 text-gray-500 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 focus:ring-offset-gray-100 dark:bg-zinc-700 dark:text-zinc-200 dark:ring-offset-zinc-700'>
 							<span className='sr-only'>Open options</span>
 							<svg
 								className='h-6 w-6'

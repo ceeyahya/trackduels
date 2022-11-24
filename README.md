@@ -1,34 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Mastodon Follow](https://img.shields.io/mastodon/follow/109264261075497898?domain=https%3A%2F%2Ffosstodon.org&label=Mastodon&style=social)
 
-## Getting Started
+[![Linkedin](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yahya-chahine/)
 
-First, run the development server:
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit%20my%20Website-green.svg)](https://chahineyahya.dev)
 
-```bash
-npm run dev
-# or
-yarn dev
+# **TrackDuels**
+
+## Project Purpose
+
+I enjoy exchanging Spotify playlists with my friends and new people I meet, and I always wonder what their favourite songs in my playlist are.
+
+so I decided to find out by creating an application, that pulls all the songs from my playlists and in each round prompts the user to vote for their favourite out of 2 random songs. Then I created a leaderboard page that list the top 10 most liked songs.
+
+## Tech Stack
+
+This repository/project is a revamp of a previous version with the same purpose, it used Python (FastAPI) and Postgres hosted on [Render](https://render.com) for the backend and Next.js hosted on [Vercel](https://vercel.com) for the frontend. Unfortunately I couldn't keep my database instance up due to Render's free tier limit.
+
+The new version uses [Supabase](https://supabase.com), [Prisma](https://prisma.io) and Next.js (Typescript) hosted on Vercel. I use Tailwind CSS to style the app and [Framer Motion](https://framer.com/motion) for animations.
+
+## Setup the Project Locally
+
+1. Clone the project
+
+```console
+git clone git@github.com:ceeyahya/trackduels.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navigate to the folder and install the dependencies
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```console
+cd trackduels/ && npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. The default prisma database provider is postgres, so either create a db locally or use supabase.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. Create a `.env` file at the root of the project
 
-## Learn More
+5. Add the database connection URI to the `.env` file
 
-To learn more about Next.js, take a look at the following resources:
+6. Run the project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```console
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Note
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The JavaScript Spotify API has a bad DX in my opinion, I didn't want to deal with it for a project this size, so I wrote a script in Python that I run when I add new songs to my playlist using Python and Spotipy.

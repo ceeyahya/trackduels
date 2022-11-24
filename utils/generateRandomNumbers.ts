@@ -1,13 +1,10 @@
-export const generateRandomNumbers = (
-	min: number,
-	max: number,
-	times: number
-) => {
-	const randoms = [];
+export const generateRandomNumbers = (max: number) => {
+	let firstNumber = Math.floor(Math.random() * max);
+	let secondNumber = Math.floor(Math.random() * max);
 
-	for (let i = 0; i < times; i++) {
-		randoms.push(Math.floor(Math.random() * (max - min) + min));
+	if (firstNumber == secondNumber) {
+		secondNumber = Math.floor(Math.random() * max);
 	}
 
-	return randoms;
+	return [firstNumber, secondNumber];
 };

@@ -108,7 +108,7 @@ function Vote({ tracks }: { tracks: Tracks }) {
 
 export const getServerSideProps: GetServerSideProps = async () => {
 	const tracksCount = await prisma.track.count();
-	const randomIds = generateRandomNumbers(1, tracksCount, 2);
+	const randomIds = generateRandomNumbers(tracksCount);
 
 	const firstTrack = await prisma.track.findUnique({
 		where: {

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -5,6 +6,7 @@ import { NavMenu } from 'components/NavMenu';
 import Head from 'next/head';
 
 function Home() {
+	const [loading, setLoading] = useState(false);
 	const container = {
 		hidden: { opacity: 0 },
 		show: {
@@ -66,16 +68,38 @@ function Home() {
 						<div className='flex items-center space-x-2'>
 							<motion.div variants={item}>
 								<Link
+									onClick={() => setLoading(true)}
 									className='inline-block rounded-md bg-indigo-500 px-2 py-2 text-sm text-white transition duration-300 hover:bg-indigo-600 sm:px-4 sm:py-2 sm:text-base'
 									href='/vote'>
-									Get Started !
+									{loading ? (
+										<svg
+											className='h-6 w-6 animate-spin'
+											xmlns='http://www.w3.org/2000/svg'
+											viewBox='0 0 24 24'>
+											<path fill='none' d='M0 0h24v24H0z' />
+											<path d='M18.364 5.636L16.95 7.05A7 7 0 1 0 19 12h2a9 9 0 1 1-2.636-6.364z' />
+										</svg>
+									) : (
+										'Get Started'
+									)}
 								</Link>
 							</motion.div>
 							<motion.div variants={item}>
 								<Link
+									onClick={() => setLoading(true)}
 									className='inline-block rounded-md bg-indigo-100 px-2 py-2 text-sm text-indigo-600 transition duration-300 hover:bg-indigo-200 dark:bg-indigo-900 dark:text-indigo-100 dark:hover:bg-indigo-800 sm:px-4 sm:py-2 sm:text-base'
 									href='/leaderboard'>
-									Leaderboard
+									{loading ? (
+										<svg
+											className='h-6 w-6 animate-spin'
+											xmlns='http://www.w3.org/2000/svg'
+											viewBox='0 0 24 24'>
+											<path fill='none' d='M0 0h24v24H0z' />
+											<path d='M18.364 5.636L16.95 7.05A7 7 0 1 0 19 12h2a9 9 0 1 1-2.636-6.364z' />
+										</svg>
+									) : (
+										'Leaderboard'
+									)}
 								</Link>
 							</motion.div>
 						</div>

@@ -4,7 +4,7 @@
 
 # **TrackDuels**
 
-If you just want to checkout the project online below is a link to get access to it:
+You can access the live version of the project by clicking below:
 
 [![Check out the Live Version](https://img.shields.io/badge/Check%20out%20the%20Live%20Version-6366f1?style=for-the-badge&logoColor=ffffff&link=https://trackduels.vercel.app)](https://trackduels.vercel.app)
 
